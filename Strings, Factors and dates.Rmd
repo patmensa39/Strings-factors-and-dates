@@ -136,4 +136,53 @@ ymd(20201004, tz= "GMT")
 ymd(20201004, tz= "Asia/Singapore")
 ymd(20201004, tz= "America/New_York")
 
+
+```{r}
+### Extracting date and time. 
+as_date(390000)
+as_datetime(390000)
+datetime<-ymd_hms("3037-10-04 12:24:54")
+datetime
+month(datetime)
+mday(datetime)
+yday(datetime)
+wday(datetime)
+wday(datetime)
+### Showing by word
+wday(datetime, label = TRUE)
+### with no abbreviation. 
+wday(datetime, label = TRUE, abbr = FALSE)
+
+### Converting weeks to seconds.
+dweeks(12)
+### months to seconds
+dmonths(12)
+### years to seconds
+dyears(14)
+
+### Addition and multiplication of duration
+### They all covert to seconds
+dyears(4) + dweeks(5)
+dyears(4) + dweeks(5) +ddays(6)
+3*dyears(4)
+
+### tomorrow
+tomorrow<- today()+ddays(1)
+tomorrow
+### last year
+last.year<- today()-dyears(1)
+last.year
+### Next five years
+next.5.years<-today()+dyears(5)
+next.5.years
+
+## Dealing with periods.
+one.pm<- ymd_hms("2016-03-12 13:00:00", tz="America/New_York")
+one.pm
+one.pm + ddays(1)
+one.pm + days(1)
+
+### Intervals
+dyears(1)/ddays(1)
+```
  
